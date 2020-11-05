@@ -1,3 +1,5 @@
+#!/bin/zsh
+
 # dotfilesへのリンクをホームに貼る
 
 for f in .??*

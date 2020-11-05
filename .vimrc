@@ -21,6 +21,10 @@ set fileencodings=utf-8,cp932
 set ttimeoutlen=1
 "折りたたみの情報の保存先？
 set viewdir=~/.vim/view
+".swpの保存先
+set directory=~/tmp
+"~の保存先
+set backupdir=~/tmp
 colorscheme darkblue
 syntax on
 
@@ -91,6 +95,8 @@ augroup END
 "折りたたみ関連
 au BufWritePost * if expand('%') != '' && &buftype !~ 'nofile' | mkview | endif
 au BufRead * if expand('%') != '' && &buftype !~ 'nofile' | silent loadview | endif
+"jsonの折りたたみ設定 なんかできない
+"au FileType json setlocal foldmethod=indent foldlevel=1
 
 ".vimrcを保存するとリロード
 au BufWritePost ~/.vimrc source ~/.vimrc

@@ -3,3 +3,10 @@
 
 [[plugins]]
 repo = 'mattn/vim-maketable'
+
+[[plugins]]
+repo = 'tpope/vim-surround'
+
+# 差分表示
+[[plugins]]
+repo = "airblade/vim-gitgutter"

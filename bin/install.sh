@@ -1,4 +1,7 @@
 # dotfilesへのリンクをホームに貼る
+
+cur_dir=$(pwd)
+
 for f in .??*
 do
     [[ "$f" == ".git" ]] && continue
@@ -8,6 +11,6 @@ do
 		echo ~/"$f" already exist
 		continue
 	fi
-    ln -s "$f" ~/"$f"
-	echo linked "$f" to ~/"$f" successfully
+    ln -s "$cur_dir"/"$f" ~/"$f"
+	echo linked "$cur_dir"/"$f" to ~/"$f" successfully
 done

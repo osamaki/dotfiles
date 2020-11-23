@@ -5,3 +5,7 @@ on_ft = ['python']
 [[plugins]]
 repo = 'scrooloose/nerdtree'
 on_cmd = ['NERDTreeToggle']
+
+[[plugins]]
+repo = 'mattn/vim-maketable'
+on_cmd = ['MakeTable']

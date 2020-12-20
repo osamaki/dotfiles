@@ -28,6 +28,15 @@ set backupdir=~/tmp
 colorscheme darkblue
 syntax on
 
+" キーマッピング
+" ノーマルモードでひらがなで入力してもインサートモードに入れる
+nnoremap あ a
+nnoremap い i
+
+
+" load matchit
+source $VIMRUNTIME/macros/matchit.vim
+
 
 "dein Scripts-----------------------------
 " dein.vim settings {{{

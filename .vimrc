@@ -96,6 +96,10 @@ endif
 "End dein Scripts-------------------------
 
 
+" jediの自動補完のキーを変更
+let g:jedi#completions_command = "<C-N>"
+
+
 "autocmdの多重読み込み防止？
 augroup vimrc
 	autocmd!

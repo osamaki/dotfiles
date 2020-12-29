@@ -33,6 +33,9 @@ syntax on
 nnoremap あ a
 nnoremap い i
 
+" Leaderの割り当て変更
+let mapleader = "\<Space>"
+
 
 " load matchit
 source $VIMRUNTIME/macros/matchit.vim

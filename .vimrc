@@ -17,6 +17,8 @@ set wildmenu
 set clipboard=unnamed,autoselect
 set backspace=indent,eol,start
 set fileencodings=utf-8,cp932
+" clipboardから貼るときに邪魔になるautoindentなどを無効化
+set pastetoggle=<f5>
 "esc-何々　の待ち時間（ms）
 set ttimeoutlen=1
 "折りたたみの情報の保存先？

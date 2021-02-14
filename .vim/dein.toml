@@ -7,3 +7,6 @@ repo = 'tpope/vim-surround'
 # 差分表示
 [[plugins]]
 repo = "airblade/vim-gitgutter"
+
+[[plugins]]
+repo = "nelstrom/vim-visual-star-search"

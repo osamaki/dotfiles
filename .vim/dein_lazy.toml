@@ -1,6 +1,14 @@
 [[plugins]]
-repo = "davidhalter/jedi-vim"
+repo = 'prabirshrestha/async.vim'
 on_ft = ['python']
+
+[[plugins]]
+repo = 'prabirshrestha/vim-lsp'
+on_ft = ['python']
+depends = ['async.vim'] #, 'vim-virtualenv']
+# hook_source = '''
+# source ~/.config/nvim/plugins/vim-lsp.rc.vim
+# '''
 
 [[plugins]]
 repo = 'scrooloose/nerdtree'

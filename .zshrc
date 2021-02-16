@@ -1,6 +1,9 @@
 export PS1="%~
 : "
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Frameworks/Python.framework/Versions/3.8/bin/:/Users/admin/Desktop/ccg/learningbyreading/ext/candc/bin:/Users/admin/Library/Android/sdk/platform-tools"
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH="$PATH:/Library/Frameworks/Python.framework/Versions/3.8/bin/"
+# "/Users/admin/Desktop/ccg/learningbyreading/ext/candc/bin
+export PATH="$PATH:/Users/admin/Library/Android/sdk/platform-tools"
 
 ## Fuzzy match
 ### https://gihyo.jp/dev/serial/01/zsh-book/0005 を参考
@@ -19,7 +22,7 @@ export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 
 # for node.js
-export PATH=$HOME/.nodebrew/current/bin:$PATH
+export PATH="$PATH:$HOME/.nodebrew/current/bin"
 export SSL_CERT_FILE="/Users/admin/.local/share/virtualenvs/nlp-0joC6egm/lib/python3.8/site-packages/certifi/cacert.pem"
 
 alias pdf="rbenv exec pdf-extract"

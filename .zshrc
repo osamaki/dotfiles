@@ -1,3 +1,5 @@
+setopt brace_ccl             # 範囲指定できるように 例) mkdir {1-3} で フォルダ1,2,3を作れる
+
 export PS1="%~
 : "
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"

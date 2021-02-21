@@ -32,3 +32,5 @@ alias pdf="rbenv exec pdf-extract"
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 alias rm="rm -i"
+
+source ~/Repository/MyScripts/scripts.sh

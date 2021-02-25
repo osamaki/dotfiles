@@ -35,6 +35,8 @@ syntax on
 nnoremap あ a
 nnoremap い i
 
+nnoremap <silent><C-e> :NERDTreeToggle<CR>
+
 " Leaderの割り当て変更
 let mapleader = "\<Space>"
 

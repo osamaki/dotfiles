@@ -1,18 +1,24 @@
+" 見た目系
 set number
 set title
+" 現在の行を強調表示
+set cursorline
+" ステータスラインを常に表示
 set laststatus=2
-set noexpandtab
-set tabstop=4
-set shiftwidth=4
-retab!
 set autoindent
 set smartindent
-set hlsearch
-set incsearch
 set showmatch
 set matchtime=1
 "対応するやつハイライトするペアに　追加
 set matchpairs& matchpairs+=<:>
+
+set noexpandtab
+set tabstop=4
+set shiftwidth=4
+retab!
+
+set hlsearch
+set incsearch
 set wildmenu
 set clipboard=unnamed,autoselect
 set backspace=indent,eol,start

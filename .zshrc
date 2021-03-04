@@ -6,6 +6,7 @@ export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 export PATH="$PATH:/Library/Frameworks/Python.framework/Versions/3.8/bin/"
 # "/Users/admin/Desktop/ccg/learningbyreading/ext/candc/bin
 export PATH="$PATH:/Users/admin/Library/Android/sdk/platform-tools"
+export PATH="$PATH:$HOME/Repositories/MyScripts"
 
 ## Fuzzy match
 ### https://gihyo.jp/dev/serial/01/zsh-book/0005 を参考

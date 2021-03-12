@@ -17,6 +17,7 @@ export PATH="$PATH:$HOME/Repositories/MyScripts"
 ### r:|?=**: 各入力文字の前後に「*」があるものとして補完する
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' '+m:{A-Z}={a-z}' '+r:|[-_.]=**' '+l:|=*' '+r:|?=**'
 
+# pythonのimportパス
 export PYTHONPATH="$PYTHONPATH:$HOME/Repositories"
 
 # for pyenv
@@ -28,6 +29,7 @@ eval "$(pyenv init -)"
 export PATH="$PATH:$HOME/.nodebrew/current/bin"
 export SSL_CERT_FILE="/Users/admin/.local/share/virtualenvs/nlp-0joC6egm/lib/python3.8/site-packages/certifi/cacert.pem"
 
+# 使ってない
 alias pdf="rbenv exec pdf-extract"
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"

@@ -3,10 +3,14 @@
 "--------------------------
 set number
 set title
+colorscheme darkblue
+set background=dark
 " 現在の行を強調表示
 set cursorline
 " ステータスラインを常に表示
 set laststatus=2
+set ruler
+set showcmd
 set autoindent
 set smartindent
 set showmatch
@@ -24,6 +28,8 @@ retab!
 set hlsearch
 set incsearch
 
+" バッファを切り替える時に一意と保存しなくて良くなる
+set hidden
 set wildmenu
 set clipboard=unnamed,autoselect
 set backspace=indent,eol,start
@@ -38,7 +44,6 @@ set viewdir=~/.vim/view
 set directory=~/tmp
 "~の保存先
 set backupdir=~/tmp
-colorscheme darkblue
 syntax on
 
 " キーマッピング

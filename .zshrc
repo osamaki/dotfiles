@@ -36,4 +36,4 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 
 alias rm="rm -i"
 
-source ~/Repository/MyScripts/scripts.sh
+source ~/Repositories/MyScripts/scripts.sh

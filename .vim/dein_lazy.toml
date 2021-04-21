@@ -1,7 +1,10 @@
+########## for lsp
+# Execute in asynchronous
 [[plugins]]
 repo = 'prabirshrestha/async.vim'
 on_ft = ['python']
 
+# Auto complete
 [[plugins]]
 repo = 'prabirshrestha/asyncomplete.vim'
 on_ft = ['python']
@@ -14,14 +17,21 @@ hook_source = '''
 source ~/Repositories/dotfiles/.vim/vim-lsp.rc.vim
 '''
 
+# Add LSP support
 [[plugins]]
-repo = 'prabirshrestha/asyncomplete.vim'
+repo = 'prabirshrestha/asyncomplete-lsp.vim'
 on_ft = ['python']
 
 # [[plugins]]
 # repo = 'mattn/vim-lsp-settings'
 # on_ft = ['python']
 # depends = ['async.vim']
+
+[[pluglins]]
+repo = 'w0rp/ale'
+on_ft = ['python']
+##########
+
 
 [[plugins]]
 repo = 'scrooloose/nerdtree'
@@ -30,3 +40,7 @@ on_cmd = ['NERDTreeToggle']
 [[plugins]]
 repo = 'mattn/vim-maketable'
 on_cmd = ['MakeTable']
+
+[[plugins]]
+repo = 'mattn/vim-sonictemplate'
+on_cmd = ['Template']

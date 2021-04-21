@@ -28,8 +28,9 @@ retab!
 set hlsearch
 set incsearch
 
-" バッファを切り替える時に一意と保存しなくて良くなる
+" バッファを切り替える時にいちいち保存しなくて良くなる
 set hidden
+set autochdir
 set wildmenu
 set clipboard=unnamed,autoselect
 set backspace=indent,eol,start

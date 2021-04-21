@@ -56,6 +56,7 @@ nnoremap <silent><C-e> :NERDTreeToggle<CR>
 
 " Leaderの割り当て変更
 let mapleader = "\<Space>"
+let maplocalleader = ","
 
 
 " load matchit

@@ -3,12 +3,25 @@ repo = 'prabirshrestha/async.vim'
 on_ft = ['python']
 
 [[plugins]]
+repo = 'prabirshrestha/asyncomplete.vim'
+on_ft = ['python']
+
+[[plugins]]
 repo = 'prabirshrestha/vim-lsp'
 on_ft = ['python']
 depends = ['async.vim'] #, 'vim-virtualenv']
-# hook_source = '''
-# source ~/.config/nvim/plugins/vim-lsp.rc.vim
-# '''
+hook_source = '''
+source ~/Repositories/dotfiles/.vim/vim-lsp.rc.vim
+'''
+
+[[plugins]]
+repo = 'prabirshrestha/asyncomplete.vim'
+on_ft = ['python']
+
+# [[plugins]]
+# repo = 'mattn/vim-lsp-settings'
+# on_ft = ['python']
+# depends = ['async.vim']
 
 [[plugins]]
 repo = 'scrooloose/nerdtree'

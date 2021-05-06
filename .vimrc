@@ -146,3 +146,6 @@ if has('mac')
 	autocmd InsertLeave * :call system(g:imeoff)
   augroup END
 endif
+
+" pythonの実行パスの設定
+let g:python3_host_prog = system("which python3")

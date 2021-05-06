@@ -46,7 +46,11 @@ function! s:configure_lsp() abort
 	nnoremap <buffer> <F1> :<C-u>LspImplementation<CR>
 	nnoremap <buffer> <Leader>r :<C-u>LspRename<CR>
 
+	" signature helpを無効化
+	call lsp#ui#vim#signature_help#_disable()
+
 	" nnoremap <LocalLeader>a :<C-u>LspDocumentDiagnostics<CR>
 
 endfunction
 let g:lsp_diagnostics_enabled = 0  " 警告やエラーの表示はALEに任せるのでOFFにする
+" let g:lsp_document_highlight_enabled = 0  HelpSignatureを無効化できるかと思ったけどできなかった

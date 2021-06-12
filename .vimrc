@@ -30,7 +30,7 @@ set incsearch
 
 " バッファを切り替える時にいちいち保存しなくて良くなる
 set hidden
-set autochdir
+set noautochdir
 set wildmenu
 set clipboard=unnamed,autoselect
 set backspace=indent,eol,start
@@ -52,7 +52,7 @@ syntax on
 nnoremap あ a
 nnoremap い i
 
-nnoremap <silent><C-e> :NERDTreeToggle<CR>
+nnoremap <silent><C-n> :NERDTreeToggle<CR>
 
 " Leaderの割り当て変更
 let mapleader = "\<Space>"

@@ -39,6 +39,12 @@ eval "$(pyenv init -)"
 export PATH="$PATH:$HOME/.nodebrew/current/bin"
 export SSL_CERT_FILE="/Users/admin/.local/share/virtualenvs/nlp-0joC6egm/lib/python3.8/site-packages/certifi/cacert.pem"
 
+
+# git
+alias ga="git add"
+alias gs="git status"
+alias gcmsg="git commit -m"
+
 # 使ってない
 alias pdf="rbenv exec pdf-extract"
 

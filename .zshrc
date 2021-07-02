@@ -1,4 +1,14 @@
-setopt brace_ccl             # 範囲指定できるように 例) mkdir {1-3} で フォルダ1,2,3を作れる
+# 範囲指定できるように 例) mkdir {1-3} で フォルダ1,2,3を作れる
+setopt brace_ccl
+
+# 直前と同じコマンドの場合はヒストリに追加しない
+setopt hist_ignore_dups
+# 同じコマンドをヒストリに残さない
+setopt hist_ignore_all_dups
+# ヒストリに保存するときに余分なスペースを削除する
+setopt hist_reduce_blanks
+
+
 
 export PS1="%~
 : "
@@ -37,3 +47,16 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 alias rm="rm -i"
 
 source ~/Repositories/MyScripts/scripts.sh
+
+# for prolog
+export PATH=$PATH:"/Applications/SWI-Prolog.app/Contents/MacOS"
+alias prolog="swipl"
+
+# peco
+function peco-select-history() {
+  BUFFER=$(\history -n 1 | tac | peco)
+  CURSOR=$#BUFFER
+  zle clear-screen
+}
+zle -N peco-select-history
+bindkey '^r' peco-select-history

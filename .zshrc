@@ -54,6 +54,18 @@ alias rm="rm -i"
 
 source ~/Repositories/MyScripts/scripts.sh
 
+
+#========================
+# zsh-syntax-highlighting
+# installation:
+# mkdir ~/.zsh
+# git clone git://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh/zsh-syntax-highlighting
+#========================
+if [ -f ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
+  source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fi
+
+
 # for prolog
 export PATH=$PATH:"/Applications/SWI-Prolog.app/Contents/MacOS"
 alias prolog="swipl"

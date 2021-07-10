@@ -66,6 +66,11 @@ if [ -f ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
 fi
 
 
+# タブ補完
+autoload -U compinit
+compinit
+
+
 # for prolog
 export PATH=$PATH:"/Applications/SWI-Prolog.app/Contents/MacOS"
 alias prolog="swipl"

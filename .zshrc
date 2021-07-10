@@ -69,6 +69,7 @@ fi
 # タブ補完
 autoload -U compinit
 compinit
+_comp_options+=(globdots)  # include hidden files
 
 
 # for prolog

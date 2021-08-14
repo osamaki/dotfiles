@@ -20,6 +20,10 @@ set matchpairs& matchpairs+=<:>
 set noexpandtab
 set tabstop=4
 set shiftwidth=4
+augroup fileTypeIndent
+    autocmd!
+    autocmd Filetype html,javascript setlocal tabstop=2 softtabstop=2 shiftwidth=2
+augroup END
 retab!
 
 "--------------------------

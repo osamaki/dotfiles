@@ -74,7 +74,7 @@ _comp_options+=(globdots)  # include hidden files
 
 # edit line in vim with ctrl-e
 autoload edit-command-line; zle -N edit-command-line
-bindkey '^e' edit-command-line
+bindkey '^v' edit-command-line
 
 
 # for prolog

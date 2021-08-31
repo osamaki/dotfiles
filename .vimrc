@@ -25,6 +25,7 @@ augroup fileTypeIndent
     autocmd Filetype html,javascript setlocal tabstop=2 softtabstop=2 shiftwidth=2
 augroup END
 retab!
+syntax on
 
 "--------------------------
 " 検索
@@ -49,7 +50,11 @@ set viewdir=~/.vim/view
 set directory=~/tmp
 "~の保存先
 set backupdir=~/tmp
-syntax on
+"undoの保存
+if has('persistent_undo')
+  set undodir=~/.vim/undo
+  set undofile
+endif
 
 " キーマッピング
 " ノーマルモードでひらがなで入力してもインサートモードに入れる

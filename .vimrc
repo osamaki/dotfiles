@@ -158,3 +158,5 @@ endif
 
 " pythonの実行パスの設定
 let g:python3_host_prog = system("which python3")
+" templateの保存先
+let g:sonictemplate_vim_template_dir = ['~/.vim/template']

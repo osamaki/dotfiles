@@ -79,6 +79,10 @@ let maplocalleader = ","
 source $VIMRUNTIME/macros/matchit.vim
 
 
+" lspの設定ファイル実行
+source ~/Repositories/dotfiles/.vim/vim-lsp.rc.vim
+
+
 "dein Scripts-----------------------------
 " dein.vim settings {{{
 " install dir {{{

@@ -17,9 +17,10 @@ repo = 'prabirshrestha/asyncomplete-lsp.vim'
 [[plugins]]
 repo = 'prabirshrestha/vim-lsp'
 depends = ['async.vim'] #, 'vim-virtualenv']
-hook_source = '''
-source ~/Repositories/dotfiles/.vim/vim-lsp.rc.vim
-'''
+# deinがcacheを使ってるからか，実行されないことがあるので，.vimrcで実行知るようにした
+# hook_source = '''
+# source ~/Repositories/dotfiles/.vim/vim-lsp.rc.vim
+# '''
 
 # [[plugins]]
 # repo = 'mattn/vim-lsp-settings'

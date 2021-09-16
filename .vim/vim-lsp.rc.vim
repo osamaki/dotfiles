@@ -12,10 +12,6 @@ highlight link LspWarningHighlight Error
 " let g:lsp_log_verbose = 1  " デバッグ用ログを出力
 " let g:lsp_log_file = expand('~/.cache/tmp/vim-lsp.log')  " ログ出力のPATHを設定
 
-" これなしでいいんか？　python3_host_progは設定済みだから使えるけど
-" g:python3_host_prog にはpythonのパスを設定．
-" 'cmd': { server_info -> [expand(s:pyls_path)] } というふうに使うらしい．
-" let s:pyls_path = fnamemodify(g:python3_host_prog, ':h') . '/'. 'pyls'
 
 " writeするとなぜかvimが固まる
 augroup MyLSP
@@ -24,9 +20,15 @@ augroup MyLSP
 		" pylsの起動定義
 		augroup LspPython
 			autocmd!
+			
+			" これなしでいいんか？　python3_host_progは設定済みだから使えるけど
+			" g:python3_host_prog にはpythonのパスを設定．
+			" 'cmd': { server_info -> [expand(s:pyls_path)] } というふうに使うらしい．
+			let s:pyls_path = fnamemodify(g:python3_host_prog, ':h') . '/'. 'pyls'
+
 			autocmd User lsp_setup call lsp#register_server({
 		  \ 'name': 'pyls',
-		  \ 'cmd': { server_info -> ['pyls'] },
+		  \ 'cmd': { server_info -> [expand(s:pyls_path)] },
 		  \ 'whitelist': ['python'],
 		  \ 'workspace_config': {
 		  \   'pyls': {

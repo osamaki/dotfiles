@@ -9,3 +9,8 @@ on_cmd = ['MakeTable']
 [[plugins]]
 repo = 'mattn/vim-sonictemplate'
 on_cmd = ['Template']
+
+# 気になる
+# [[plugins]]
+# repo = 'mattn/ctrlp-matchfuzzy'
+# on_cmd = []

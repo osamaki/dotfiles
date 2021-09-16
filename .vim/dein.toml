@@ -38,7 +38,8 @@ hook_add = '''
   \  'mode_map': {'c': 'NORMAL'},
   \  'active': {
   \    'right': [
-  \      [ 'lsp_errors', 'lsp_warnings' ],
+  \      [ 'lineinfo' ],
+  \		 [ 'lsp_errors', 'lsp_warnings' ]
   \    ]
   \  },
   \  'component_expand': {

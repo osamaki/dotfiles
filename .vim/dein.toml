@@ -62,9 +62,6 @@ repo = 'tpope/vim-surround'
 repo = "airblade/vim-gitgutter"
 
 [[plugins]]
-repo = "mattn/vim-sonictemplate"
-
-[[plugins]]
 repo = "nelstrom/vim-visual-star-search"
 
 # 気になる

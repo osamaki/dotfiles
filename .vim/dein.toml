@@ -1,6 +1,58 @@
 [[plugins]]
 repo = 'Shougo/dein.vim'
 
+########## for lsp
+# Execute in asynchronous
+[[plugins]]
+repo = 'prabirshrestha/async.vim'
+
+# Auto complete
+[[plugins]]
+repo = 'prabirshrestha/asyncomplete.vim'
+
+# Auto completion for LSP
+[[plugins]]
+repo = 'prabirshrestha/asyncomplete-lsp.vim'
+
+[[plugins]]
+repo = 'prabirshrestha/vim-lsp'
+depends = ['async.vim'] #, 'vim-virtualenv']
+hook_source = '''
+source ~/Repositories/dotfiles/.vim/vim-lsp.rc.vim
+'''
+
+# [[plugins]]
+# repo = 'mattn/vim-lsp-settings'
+# depends = ['async.vim']
+
+# lightline は使い続けるか微妙
+# LSP-lightline bridge
+[[plugins]]
+repo = 'halkn/lightline-lsp'
+
+# Customize status line
+[[plugins]]
+repo = 'itchyny/lightline.vim'
+hook_add = '''
+  let g:lightline = {
+  \  'mode_map': {'c': 'NORMAL'},
+  \  'active': {
+  \    'right': [
+  \      [ 'lsp_errors', 'lsp_warnings' ],
+  \    ]
+  \  },
+  \  'component_expand': {
+  \    'lsp_warnings': 'lightline_lsp#warnings',
+  \    'lsp_errors':   'lightline_lsp#errors',
+  \  },
+  \  'component_type': {
+  \    'lsp_warnings': 'warning',
+  \    'lsp_errors':   'errors',
+  \  },
+  \}
+'''
+##########
+
 [[plugins]]
 repo = 'tpope/vim-surround'
 
@@ -13,3 +65,7 @@ repo = "mattn/vim-sonictemplate"
 
 [[plugins]]
 repo = "nelstrom/vim-visual-star-search"
+
+# 気になる
+# [[plugins]]
+# repo = "thinca/vim-quickrun"

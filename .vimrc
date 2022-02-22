@@ -1,9 +1,20 @@
 " pythonの実行パスの設定
-" うまくいかない
 " システムのデフォルトのパスが設定される
 " let g:python3_host_prog = system("which python3")
+"
 " let g:python3_host_prog = system("pipenv --py")
-let g:python3_host_prog = "/home/ozaki/.local/share/virtualenvs/Moonshot-IhqM7bBh/bin/python"
+"
+" let g:python3_host_prog = "/home/ozaki/.local/share/virtualenvs/Moonshot-IhqM7bBh/bin/python"
+" 
+" できるけど起動が超遅くなる
+if $PIPENV_ACTIVE
+ 	" let g:python3_host_prog = substitute(system("pipenv --venv"), "\n", "", "") . "/bin/python"
+	let g:python3_host_prog = system("pipenv --py")
+	" echo "in pipenv. path:" . g:python3_host_prog
+else
+	let g:python3_host_prog = system("which python3")
+	" echo "not in pipenv. path:" . g:python3_host_prog
+endif
 
 "--------------------------
 " 表示設定
@@ -44,7 +55,9 @@ set incsearch
 set hidden
 set noautochdir
 set wildmenu
-set clipboard=unnamed,autoselect
+if !has('nvim')
+	set clipboard=unnamed,autoselect
+endif
 set backspace=indent,eol,start
 set fileencodings=utf-8,cp932
 " clipboardから貼るときに邪魔になるautoindentなどを無効化
@@ -79,14 +92,15 @@ let maplocalleader = ","
 source $VIMRUNTIME/macros/matchit.vim
 
 
-" lspの設定ファイル実行
-source ~/Repositories/dotfiles/.vim/vim-lsp.rc.vim
-
-
 "dein Scripts-----------------------------
 " dein.vim settings {{{
 " install dir {{{
-let s:dein_dir = expand('~/.cache/dein')
+if has('nvim')
+	let s:dein_dir = expand('~/.cache/dein/nvim')
+else
+	let s:dein_dir = expand('~/.cache/dein/vim')
+endif
+
 let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
 " }}}
 
@@ -104,7 +118,11 @@ if dein#load_state(s:dein_dir)
   call dein#begin(s:dein_dir)
 
   " .toml file
-  let s:rc_dir = expand('~/.vim')
+  if has('nvim')
+	  let s:rc_dir = expand('~/.nvim')
+  else
+	  let s:rc_dir = expand('~/.vim')
+  endif
   if !isdirectory(s:rc_dir)
 	call mkdir(s:rc_dir, 'p')
   endif
@@ -139,6 +157,10 @@ if len(s:removed_plugins) > 0
 endif
 " }}}
 "End dein Scripts-------------------------
+
+
+" lspの設定ファイル実行
+" source ~/Repositories/dotfiles/.vim/vim-lsp.rc.vim
 
 
 " jediの自動補完のキーを変更

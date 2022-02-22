@@ -14,3 +14,7 @@ on_cmd = ['Template']
 # [[plugins]]
 # repo = 'mattn/ctrlp-matchfuzzy'
 # on_cmd = []
+
+[[plugins]]
+repo = 'skanehira/preview-markdown.vim'
+on_cmd = ['PreviewMarkdown']

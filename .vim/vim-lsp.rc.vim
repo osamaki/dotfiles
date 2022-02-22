@@ -5,12 +5,13 @@ let g:lsp_diagnostics_echo_cursor = 1
 let g:lsp_virtual_text_enabled = 1
 " ハイライト．できてるか？
 let g:lsp_diagnostics_signs_enabled = 0
-highlight link LspWarningHighlight Error
+" highlight link LspWarningHighlight Error
 
 
 " デバッグ用設定
-" let g:lsp_log_verbose = 1  " デバッグ用ログを出力
-" let g:lsp_log_file = expand('~/.cache/tmp/vim-lsp.log')  " ログ出力のPATHを設定
+" let g:lsp_log_verbose = 2  " デバッグ用ログを出力
+" let g:lsp_log_file = expand('~/vim-lsp.log')  " ログ出力のPATHを設定
+" let g:asyncomplete_log_file = expand('~/asyncomplete.log')
 
 
 " writeするとなぜかvimが固まる
@@ -21,9 +22,6 @@ augroup MyLSP
 		augroup LspPython
 			autocmd!
 			
-			" これなしでいいんか？　python3_host_progは設定済みだから使えるけど
-			" g:python3_host_prog にはpythonのパスを設定．
-			" 'cmd': { server_info -> [expand(s:pyls_path)] } というふうに使うらしい．
 			let s:pyls_path = fnamemodify(g:python3_host_prog, ':h') . '/'. 'pyls'
 
 			autocmd User lsp_setup call lsp#register_server({
@@ -37,6 +35,7 @@ augroup MyLSP
 		  \		  'flake8': {'enabled': v:true},
           \       'pyflakes': {'enabled': v:false},
           \       'pycodestyle': {'enabled': v:false},
+          \       'yapf': {'enabled': v:true},
 		  \       'jedi_definition': {'follow_imports': v:true, 'follow_builtin_imports': v:true},
 		  \	    }
 		  \   }
@@ -45,6 +44,7 @@ augroup MyLSP
 		augroup END
 	endif
 augroup END
+
 
 " 言語ごとにServerが実行されたらする設定を関数化
 " Todo:
@@ -65,8 +65,11 @@ function! s:configure_lsp() abort
 	nnoremap <buffer> <Leader>a :<C-u>LspDocumentDiagnostics<CR>
 
 	" signature helpを無効化
-	call lsp#ui#vim#signature_help#_disable()
+	let g:lsp_signature_help_enabled = 0
+	" ソースコード見てこっちかと思ったが効かなかった
+	" call lsp#ui#vim#signature_help#_disable()
 
+    let g:lsp_format_sync_timeout = 1000
 
 endfunction
 " let g:lsp_diagnostics_enabled = 0  " diagnostics(警告やエラーの表示？)はALEに任せるのでOFFにする

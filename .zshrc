@@ -70,6 +70,7 @@ fi
 autoload -U compinit
 compinit
 _comp_options+=(globdots)  # include hidden files
+zstyle ':completion:*:default' menu select=1
 
 
 # edit line in vim with ctrl-e

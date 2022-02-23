@@ -191,3 +191,7 @@ endif
 
 " templateの保存先
 let g:sonictemplate_vim_template_dir = ['~/.vim/template']
+
+" fzf
+" deinのhook_addに書いた
+" se rtp+=~linuxbrew/.linuxbrew/opt/fzf

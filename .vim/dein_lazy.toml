@@ -16,5 +16,27 @@ on_cmd = ['Template']
 # on_cmd = []
 
 [[plugins]]
+repo = 'junegunn/fzf.vim'
+on_cmd = [
+    'Files',
+    'ProjectFiles',
+    'Buffers',
+    'BLines',
+    'History',
+    'Tags',
+    'BTags',
+    'GFiles',
+    'Ag',
+	'Helptags',
+]
+hook_add = '''
+" fzfのリポジトリのパスをランタイムに追加
+" なぜかhook_sourceではだめ
+set rtp+=~linuxbrew/.linuxbrew/opt/fzf
+'''
+
+
+
+[[plugins]]
 repo = 'skanehira/preview-markdown.vim'
 on_cmd = ['PreviewMarkdown']

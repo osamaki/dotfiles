@@ -8,16 +8,16 @@ repo = 'Shougo/dein.vim'
 # repo = 'prabirshrestha/async.vim'
 
 # Auto complete
-# [[plugins]]
-# repo = 'prabirshrestha/asyncomplete.vim'
+[[plugins]]
+repo = 'prabirshrestha/asyncomplete.vim'
 
 # Auto completion for LSP
-# [[plugins]]
-# repo = 'prabirshrestha/asyncomplete-lsp.vim'
+[[plugins]]
+repo = 'prabirshrestha/asyncomplete-lsp.vim'
 
-# [[plugins]]
-# repo = 'prabirshrestha/vim-lsp'
-# depends = ['vim-virtualenv']
+[[plugins]]
+repo = 'prabirshrestha/vim-lsp'
+depends = ['vim-virtualenv']
 # deinがcacheを使ってるからか，実行されないことがあるので.vimrcで実行するようにした
 # hook_source = '''
 # source ~/Repositories/dotfiles/.vim/vim-lsp.rc.vim
@@ -54,6 +54,14 @@ repo = 'Shougo/dein.vim'
 #   \  },
 #   \}
 # '''
+##########
+
+########## colorscheme
+# [[plugins]]
+# repo = "ulwlu/elly.vim"
+
+[[plugins]]
+repo = "morhetz/gruvbox"
 ##########
 
 [[plugins]]

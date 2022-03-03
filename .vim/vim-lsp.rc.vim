@@ -12,6 +12,9 @@ let g:lsp_diagnostics_signs_enabled = 0
 " let g:lsp_log_verbose = 2  " デバッグ用ログを出力
 " let g:lsp_log_file = expand('~/vim-lsp.log')  " ログ出力のPATHを設定
 " let g:asyncomplete_log_file = expand('~/asyncomplete.log')
+command! LspDebug let g:lsp_log_verbose=2 | let g:lsp_log_file = expand('~/vim-lsp.log') | let g:asyncomplete_log_file = expand('~/asyncomplete.log')
+" 止め方分からない
+" command! LspEndDebug let g:lsp_log_verbose=0 | unlet g:lsp_log_file | unlet g:asyncomplete_log_file
 
 
 " writeするとなぜかvimが固まる
@@ -36,6 +39,7 @@ augroup MyLSP
           \       'pyflakes': {'enabled': v:false},
           \       'pycodestyle': {'enabled': v:false},
           \       'yapf': {'enabled': v:true},
+          \       'autopep8': {'enabled': v:true},
 		  \       'jedi_definition': {'follow_imports': v:true, 'follow_builtin_imports': v:true},
 		  \	    }
 		  \   }

@@ -131,10 +131,6 @@ set shiftwidth=4
 " タブを '>...'、末尾のスペースを '_' で表示
 set listchars=tab:>.,trail:_
 set list
-augroup fileTypeIndent
-    autocmd!
-    autocmd Filetype html,javascript setlocal tabstop=2 softtabstop=2 shiftwidth=2
-augroup END
 retab!
 syntax on
 

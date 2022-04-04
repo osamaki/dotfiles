@@ -15,8 +15,10 @@ export PS1="%~
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 export PATH="$PATH:/Library/Frameworks/Python.framework/Versions/3.8/bin/"
 # "/Users/admin/Desktop/ccg/learningbyreading/ext/candc/bin
-export PATH="$PATH:/Users/admin/Library/Android/sdk/platform-tools"
 export PATH="$PATH:$HOME/Repositories/MyScripts"
+
+# brew
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
 ## Fuzzy match
 ### https://gihyo.jp/dev/serial/01/zsh-book/0005 を参考
@@ -37,7 +39,7 @@ eval "$(pyenv init -)"
 
 # for node.js
 export PATH="$PATH:$HOME/.nodebrew/current/bin"
-export SSL_CERT_FILE="/Users/admin/.local/share/virtualenvs/nlp-0joC6egm/lib/python3.8/site-packages/certifi/cacert.pem"
+export SSL_CERT_FILE="/Users/osamaki/Downloads/cacert-2022-03-29.pem"
 
 
 # git
@@ -79,18 +81,21 @@ bindkey '^v' edit-command-line
 
 
 # for prolog
-export PATH=$PATH:"/Applications/SWI-Prolog.app/Contents/MacOS"
+# export PATH=$PATH:"/Applications/SWI-Prolog.app/Contents/MacOS"
 alias prolog="swipl"
 
 # peco
-function peco-select-history() {
-  BUFFER=$(\history -n 1 | tac | peco)
-  CURSOR=$#BUFFER
-  zle clear-screen
-}
-zle -N peco-select-history
-bindkey '^r' peco-select-history
+# function peco-select-history() {
+  # BUFFER=$(\history -n 1 | tac | peco)
+  # CURSOR=$#BUFFER
+  # zle clear-screen
+# }
+# zle -N peco-select-history
+# bindkey '^r' peco-select-history
 
 # fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 # .git以外の.ファイル，.ディレクトリを検索
 export FZF_DEFAULT_COMMAND='find . -type f -not -path "*/.git/*" -o -type l 2> /dev/null | sed s/^..//'
+# 意味ない
+# bindkey '^F' fzf-file-widget

@@ -32,7 +32,7 @@ on_cmd = [
 hook_add = '''
 " fzfのリポジトリのパスをランタイムに追加
 " なぜかhook_sourceではだめ
-set rtp+=~linuxbrew/.linuxbrew/opt/fzf
+" set rtp+=~linuxbrew/.linuxbrew/opt/fzf
 '''
 
 

@@ -41,6 +41,9 @@ eval "$(pyenv init -)"
 export PATH="$PATH:$HOME/.nodebrew/current/bin"
 export SSL_CERT_FILE="/Users/osamaki/Downloads/cacert-2022-03-29.pem"
 
+# for vim
+export PYTHON3_HOST_PROG="/usr/bin/python3"
+
 
 # git
 alias ga="git add"

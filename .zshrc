@@ -9,13 +9,32 @@ setopt hist_ignore_dups
 setopt hist_reduce_blanks
 
 
+# 色系
+autoload -Uz colors && colors
+# export PS1="%~
+# : "
+# PROMPT="[%F{green}%m%f-%F{yellow}(%~)%f]%T
+PROMPT="(%F{yellow}%~%f) %T
+$ "
+LS_COLORS=':no=00:fi=00:di=36:ln=35:pi=33:so=32:bd=34;46:cd=34;43:ex=31:'
+TERM='xterm-256color'
 
-export PS1="%~
-: "
+#========================
+# zsh-syntax-highlighting
+# installation:
+# mkdir ~/.zsh
+# git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh/zsh-syntax-highlighting
+#========================
+if [ -f ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
+  source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fi
+
+
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 export PATH="$PATH:/Library/Frameworks/Python.framework/Versions/3.8/bin/"
 # "/Users/admin/Desktop/ccg/learningbyreading/ext/candc/bin
 export PATH="$PATH:$HOME/Repositories/MyScripts"
+export PATH="/Users/osamaki/Library/Python/3.8/bin:$PATH"
 
 # brew
 eval "$(/opt/homebrew/bin/brew shellenv)"
@@ -58,17 +77,6 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 alias rm="rm -i"
 
 source ~/Repositories/MyScripts/scripts.sh
-
-
-#========================
-# zsh-syntax-highlighting
-# installation:
-# mkdir ~/.zsh
-# git clone git://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh/zsh-syntax-highlighting
-#========================
-if [ -f ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
-  source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-fi
 
 
 # タブ補完

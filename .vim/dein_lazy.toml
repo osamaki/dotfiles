@@ -16,6 +16,9 @@ on_cmd = ['Template']
 # on_cmd = []
 
 [[plugins]]
+repo = 'junegunn/fzf'
+
+[[plugins]]
 repo = 'junegunn/fzf.vim'
 on_cmd = [
     'Files',
@@ -29,14 +32,12 @@ on_cmd = [
     'Ag',
 	'Helptags',
 ]
-hook_add = '''
-" fzfのリポジトリのパスをランタイムに追加
-" なぜかhook_sourceではだめ
-" set rtp+=~linuxbrew/.linuxbrew/opt/fzf
-'''
-
-
+depends = ['fzf']
 
 [[plugins]]
 repo = 'skanehira/preview-markdown.vim'
 on_cmd = ['PreviewMarkdown']
+
+[[plugins]]
+repo = 'mattn/vim-lsp-settings'
+on_cmd = ['LspInstallServer', 'LspUnInstallServer']

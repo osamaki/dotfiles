@@ -108,5 +108,4 @@ alias prolog="swipl"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 # .git以外の.ファイル，.ディレクトリを検索
 export FZF_DEFAULT_COMMAND='find . -type f -not -path "*/.git/*" -o -type l 2> /dev/null | sed s/^..//'
-# 意味ない
-# bindkey '^F' fzf-file-widget
+# key-bindings.zsh の fzf-file-widget の bind を ctrl-E に変える

@@ -69,8 +69,7 @@ alias ga="git add"
 alias gs="git status"
 alias gcmsg="git commit -m"
 
-# 使ってない
-alias pdf="rbenv exec pdf-extract"
+# alias pdf="rbenv exec pdf-extract"
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 

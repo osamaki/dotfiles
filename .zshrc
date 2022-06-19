@@ -30,6 +30,18 @@ if [ -f ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
 fi
 
 
+#========================
+# zsh-autosuggestions
+# installation:
+# mkdir ~/.zsh
+# git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
+#========================
+if [ -f ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
+  source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+  bindkey '^j' autosuggest-accept
+fi
+
+
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 export PATH="$PATH:/Library/Frameworks/Python.framework/Versions/3.8/bin/"
 # "/Users/admin/Desktop/ccg/learningbyreading/ext/candc/bin

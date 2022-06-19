@@ -94,6 +94,14 @@ bindkey '^v' edit-command-line
 # export PATH=$PATH:"/Applications/SWI-Prolog.app/Contents/MacOS"
 alias prolog="swipl"
 
+
+case ${OSTYPE} in
+  darwin*)
+  # for mac
+  alias ldd="otool -L"
+    ;;
+esac
+
 # peco
 # function peco-select-history() {
   # BUFFER=$(\history -n 1 | tac | peco)

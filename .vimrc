@@ -224,3 +224,6 @@ function! ToggleWindowSize()
   endif
 endfunction
 nnoremap M :call ToggleWindowSize()<CR>
+
+
+autocmd QuickFixCmdPost *grep* cwindow

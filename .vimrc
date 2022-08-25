@@ -210,3 +210,17 @@ let g:sonictemplate_vim_template_dir = ['~/.vim/template']
 nnoremap <silent> <leader>e :Files<CR>
 nnoremap <silent> <leader>b :Buffers<CR>
 nnoremap <silent> <leader>h :History<CR>
+
+
+let g:toggle_window_size = 0
+function! ToggleWindowSize()
+  if g:toggle_window_size == 1
+    exec "normal \<C-w>="
+    let g:toggle_window_size = 0
+  else
+    :resize
+    :vertical resize
+    let g:toggle_window_size = 1
+  endif
+endfunction
+nnoremap M :call ToggleWindowSize()<CR>

@@ -41,3 +41,7 @@ on_cmd = ['PreviewMarkdown']
 [[plugins]]
 repo = 'mattn/vim-lsp-settings'
 on_cmd = ['LspInstallServer', 'LspUnInstallServer']
+
+[[plugins]]
+repo = 'sharat87/roast.vim'
+on_ft = ['roast']

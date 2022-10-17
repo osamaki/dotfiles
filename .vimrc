@@ -1,19 +1,23 @@
 " pythonの実行パスの設定
-" システムのデフォルトのパスが設定される
-" let g:python3_host_prog = system("which python3")
-"
-" let g:python3_host_prog = system("pipenv --py")
-"
-" let g:python3_host_prog = "/home/ozaki/.local/share/virtualenvs/Moonshot-IhqM7bBh/bin/python"
-" 
-" できるけど起動が超遅くなる
 " if $PIPENV_ACTIVE
+	" カレントディレクトリに応じて取得しようとするので別のパスの仮想環境にいるとうまく動かない
+	" 起動が超遅くなる
 	" let g:python3_host_prog = system("pipenv --py")
 " else
+	" システムのデフォルトのパスが設定される
+	" 起動が超遅くなる
 	" let g:python3_host_prog = system("which python3")
 " endif
+"
+" let g:python3_host_prog = "/home/ozaki/.local/share/virtualenvs/Moonshot-IhqM7bBh/bin/python"
 
-let g:python3_host_prog = $PYTHON3_HOST_PROG
+" let g:python3_host_prog = $PYTHON3_HOST_PROG
+
+if exists("$VIRTUAL_ENV")
+	let g:python3_host_prog = $VIRTUAL_ENV . "/bin/python"
+	let s:python_version = system('python --version | grep -oE "\d.\d+[^.]"')[:-2]
+	let $PYTHONPATH = $VIRTUAL_ENV . "/lib/python" . s:python_version . "/site-packages/:" . $PYTHONPATH
+endif
 
 
 "dein Scripts-----------------------------

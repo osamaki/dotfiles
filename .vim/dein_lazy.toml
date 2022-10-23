@@ -35,8 +35,8 @@ on_cmd = [
 depends = ['fzf']
 
 [[plugins]]
-repo = 'skanehira/preview-markdown.vim'
-on_cmd = ['PreviewMarkdown']
+repo = 'previm/previm'
+on_ft = ['markdown']
 
 [[plugins]]
 repo = 'mattn/vim-lsp-settings'

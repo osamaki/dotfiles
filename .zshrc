@@ -167,7 +167,7 @@ esac
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 # .git以外の.ファイル，.ディレクトリを検索
-export FZF_DEFAULT_COMMAND='find . -type f -not -path "*/.git/*" -o -type l 2> /dev/null | sed s/^..//'
+export FZF_DEFAULT_COMMAND='find . -type f \( -not -path "*/.git/*" -not -path "*/.vim/view/*" \) -o -type l 2> /dev/null | sed s/^..//'
 # export FZF_DEFAULT_COMMAND="rg --files-with-matches --hidden '.' --glob '!.git'"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 # key-bindings.zsh の fzf-file-widget の bind を ctrl-E に変える

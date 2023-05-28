@@ -20,7 +20,7 @@ command! LspDebug let g:lsp_log_verbose=2 | let g:lsp_log_file = expand('~/vim-l
 " writeするとなぜかvimが固まる
 augroup MyLSP
   autocmd!
-  let s:pyls_path = fnamemodify(g:python3_host_prog, ':h') . '/'. 'pyls'
+  let s:pylsp_path = fnamemodify(g:python3_host_prog, ':h') . '/'. 'pylsp'
   " if (executable('pylsp'))
   if (executable(s:pylsp_path))
     " pylsの起動定義

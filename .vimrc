@@ -178,6 +178,10 @@ endif
 " ノーマルモードでひらがなで入力してもインサートモードに入れる
 nnoremap あ a
 nnoremap い i
+" Emacs Move
+imap <C-a>  <Home>
+imap <C-e>  <End>
+
 
 nnoremap <silent><C-n> :NERDTreeToggle<CR>
 

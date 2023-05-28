@@ -1,12 +1,12 @@
 " pythonの実行パスの設定
 " if $PIPENV_ACTIVE
-	" カレントディレクトリに応じて取得しようとするので別のパスの仮想環境にいるとうまく動かない
-	" 起動が超遅くなる
-	" let g:python3_host_prog = system("pipenv --py")
+  " カレントディレクトリに応じて取得しようとするので別のパスの仮想環境にいるとうまく動かない
+  " 起動が超遅くなる
+  " let g:python3_host_prog = system("pipenv --py")
 " else
-	" システムのデフォルトのパスが設定される
-	" 起動が超遅くなる
-	" let g:python3_host_prog = system("which python3")
+  " システムのデフォルトのパスが設定される
+  " 起動が超遅くなる
+  " let g:python3_host_prog = system("which python3")
 " endif
 "
 " let g:python3_host_prog = "/home/ozaki/.local/share/virtualenvs/Moonshot-IhqM7bBh/bin/python"
@@ -14,9 +14,9 @@
 " let g:python3_host_prog = $PYTHON3_HOST_PROG
 
 if exists("$VIRTUAL_ENV")
-	let g:python3_host_prog = $VIRTUAL_ENV . "/bin/python"
-	let s:python_version = system('python --version | grep -oE "\d.\d+[^.]"')[:-2]
-	let $PYTHONPATH = $VIRTUAL_ENV . "/lib/python" . s:python_version . "/site-packages/:" . $PYTHONPATH
+  let g:python3_host_prog = $VIRTUAL_ENV . "/bin/python"
+  let s:python_version = system('python --version | grep -oE "\d.\d+[^.]"')[:-2]
+  let $PYTHONPATH = $VIRTUAL_ENV . "/lib/python" . s:python_version . "/site-packages/:" . $PYTHONPATH
 endif
 
 
@@ -24,9 +24,9 @@ endif
 " dein.vim settings {{{
 " install dir {{{
 if has('nvim')
-	let s:dein_dir = expand('~/.cache/dein/nvim')
+  let s:dein_dir = expand('~/.cache/dein/nvim')
 else
-	let s:dein_dir = expand('~/.cache/dein/vim')
+  let s:dein_dir = expand('~/.cache/dein/vim')
 endif
 
 let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
@@ -35,7 +35,7 @@ let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
 " dein installation check {{{
 if &runtimepath !~# '/dein.vim'
   if !isdirectory(s:dein_repo_dir)
-	execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repo_dir
+  execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repo_dir
   endif
   execute 'set runtimepath^=' . s:dein_repo_dir
 endif
@@ -47,12 +47,12 @@ if dein#load_state(s:dein_dir)
 
   " .toml file
   if has('nvim')
-	  let s:rc_dir = expand('~/.nvim')
+    let s:rc_dir = expand('~/.nvim')
   else
-	  let s:rc_dir = expand('~/.vim')
+    let s:rc_dir = expand('~/.vim')
   endif
   if !isdirectory(s:rc_dir)
-	call mkdir(s:rc_dir, 'p')
+  call mkdir(s:rc_dir, 'p')
   endif
   let s:toml = s:rc_dir . '/dein.toml'
   let s:lazy_toml = s:rc_dir . '/dein_lazy.toml'
@@ -107,14 +107,14 @@ set background=dark
 "(see < http://sunaku.github.io/tmux-24bit-color.html#usage > for more information.)
 if (empty($TMUX))
   if (has("nvim"))
-	"For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
-	let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+  "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
+  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
   endif
   "For Neovim > 0.1.5 and Vim > patch 7.4.1799 < https://github.com/vim/vim/commit/61be73bb0f965a895bfb064ea3e55476ac175162 >
   "Based on Vim patch 7.4.1770 (`guicolors` option) < https://github.com/vim/vim/commit/8a633e3427b47286869aa4b96f2bfc1fe65b25cd >
   " < https://github.com/neovim/neovim/wiki/Following-HEAD#20160511 >
   if (has("termguicolors"))
-	set termguicolors
+  set termguicolors
   endif
 endif
 " 現在の行を強調表示
@@ -130,7 +130,9 @@ set matchtime=1
 "対応するやつハイライトするペアに　追加
 set matchpairs& matchpairs+=<:>
 set noexpandtab
+" タブを見た目上何文字文に展開するか？
 set tabstop=4
+" vimが挿入するインデントの見た目上の幅？
 set shiftwidth=4
 " タブを '>...'、末尾のスペースを '_' で表示
 set listchars=tab:>.,trail:_
@@ -149,7 +151,7 @@ set hidden
 set noautochdir
 set wildmenu
 if !has('nvim')
-	set clipboard=unnamed,autoselect
+  set clipboard=unnamed,autoselect
 endif
 set backspace=indent,eol,start
 set fileencodings=utf-8,cp932
@@ -187,7 +189,7 @@ source $VIMRUNTIME/macros/matchit.vim
 
 "autocmdの多重読み込み防止？
 augroup vimrc
-	autocmd!
+  autocmd!
 augroup END
 
 "折りたたみ関連
@@ -203,7 +205,7 @@ au BufWritePost ~/.vimrc source ~/.vimrc
 if has('mac')
   let g:imeoff = 'osascript -e "tell application \"System Events\" to key code 102"'
   augroup MyIMEGroup
-	autocmd InsertLeave * :call system(g:imeoff)
+    autocmd InsertLeave * :call system(g:imeoff)
   augroup END
 endif
 
@@ -219,12 +221,12 @@ nnoremap <silent> <leader>h :History<CR>
 let g:toggle_window_size = 0
 function! ToggleWindowSize()
   if g:toggle_window_size == 1
-    exec "normal \<C-w>="
-    let g:toggle_window_size = 0
+  exec "normal \<C-w>="
+  let g:toggle_window_size = 0
   else
-    :resize
-    :vertical resize
-    let g:toggle_window_size = 1
+  :resize
+  :vertical resize
+  let g:toggle_window_size = 1
   endif
 endfunction
 nnoremap M :call ToggleWindowSize()<CR>

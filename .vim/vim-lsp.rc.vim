@@ -19,61 +19,63 @@ command! LspDebug let g:lsp_log_verbose=2 | let g:lsp_log_file = expand('~/vim-l
 
 " writeするとなぜかvimが固まる
 augroup MyLSP
-	autocmd!
-	if (executable('pyls'))
-		" pylsの起動定義
-		augroup LspPython
-			autocmd!
-			
-			let s:pyls_path = fnamemodify(g:python3_host_prog, ':h') . '/'. 'pyls'
+  autocmd!
+  " let s:pyls_path = fnamemodify(g:python3_host_prog, ':h') . '/'. 'pyls'
+  " let s:pylsp_path = '/Users/osamaki/.local/share/vim-lsp-settings/servers/pylsp-all/venv/bin/pylsp'
+  let s:pylsp_path = '/Users/osamaki/.local/share/vim-lsp-settings/servers/pylsp-all/pylsp-all'
+  " if (executable('pylsp'))
+  if (executable(s:pylsp_path))
+    " pylsの起動定義
+    augroup LspPython
+      autocmd!
 
-			autocmd User lsp_setup call lsp#register_server({
-		  \ 'name': 'pyls',
-		  \ 'cmd': { server_info -> [expand(s:pyls_path)] },
-		  \ 'whitelist': ['python'],
-		  \ 'workspace_config': {
-		  \   'pyls': {
-		  \	    'configurationSources': ['flake8'],
-		  \	    'plugins': {
-		  \		  'flake8': {'enabled': v:true},
-          \       'pyflakes': {'enabled': v:false},
-          \       'pycodestyle': {'enabled': v:false},
-          \       'yapf': {'enabled': v:true},
-          \       'autopep8': {'enabled': v:true},
-		  \       'jedi_definition': {'follow_imports': v:true, 'follow_builtin_imports': v:true},
-		  \	    }
-		  \   }
-		  \	}})
-			autocmd FileType python call s:configure_lsp()
-		augroup END
-	endif
+      autocmd User lsp_setup call lsp#register_server({
+      \ 'name': 'pylsp-all',
+      \ 'cmd': { server_info -> [expand(s:pylsp_path)] },
+      \ 'whitelist': ['python'],
+      \ 'workspace_config': {
+      \   'pylsp': {
+      \     'configurationSources': ['flake8'],
+      \     'plugins': {
+      \       'flake8': {'enabled': v:true},
+      \       'pyflakes': {'enabled': v:false},
+      \       'pycodestyle': {'enabled': v:false},
+      \       'yapf': {'enabled': v:true},
+      \       'autopep8': {'enabled': v:true},
+      \       'jedi_definition': {'follow_imports': v:true, 'follow_builtin_imports': v:true},
+      \     }
+      \   }
+      \ }})
+      autocmd FileType python call s:configure_lsp()
+    augroup END
+  endif
 augroup END
 
 
 " 言語ごとにServerが実行されたらする設定を関数化
 " Todo:
-" 	rename to make it clear it is for python
+"   rename to make it clear it is for python
 function! s:configure_lsp() abort
-	setlocal omnifunc=lsp#complete   " オムニ補完を有効化
-	" LSP用にマッピング
-	nnoremap <buffer> <C-]> :<C-u>LspDefinition<CR>
-	nnoremap <buffer> <Leader>d :<C-u>LspDefinition<CR>
-	nnoremap <buffer> <Leader>D :<C-u>LspReferences<CR>
-	nnoremap <buffer> <Leader>s :<C-u>LspDocumentSymbol<CR>
-	nnoremap <buffer> <Leader>S :<C-u>LspWorkspaceSymbol<CR>
-	nnoremap <buffer> <Leader>f :<C-u>LspDocumentFormat<CR>
-	vnoremap <buffer> <Leader>F :LspDocumentRangeFormat<CR>
-	nnoremap <buffer> <Leader>K :<C-u>LspHover<CR>
-	nnoremap <buffer> <F1> :<C-u>LspImplementation<CR>
-	nnoremap <buffer> <Leader>r :<C-u>LspRename<CR>
-	nnoremap <buffer> <Leader>a :<C-u>LspDocumentDiagnostics<CR>
+  setlocal omnifunc=lsp#complete   " オムニ補完を有効化
+  " LSP用にマッピング
+  nnoremap <buffer> <C-]> :<C-u>LspDefinition<CR>
+  nnoremap <buffer> <Leader>d :<C-u>LspDefinition<CR>
+  nnoremap <buffer> <Leader>D :<C-u>LspReferences<CR>
+  nnoremap <buffer> <Leader>s :<C-u>LspDocumentSymbol<CR>
+  nnoremap <buffer> <Leader>S :<C-u>LspWorkspaceSymbol<CR>
+  nnoremap <buffer> <Leader>f :<C-u>LspDocumentFormat<CR>
+  vnoremap <buffer> <Leader>F :LspDocumentRangeFormat<CR>
+  nnoremap <buffer> <Leader>K :<C-u>LspHover<CR>
+  nnoremap <buffer> <F1> :<C-u>LspImplementation<CR>
+  nnoremap <buffer> <Leader>r :<C-u>LspRename<CR>
+  nnoremap <buffer> <Leader>a :<C-u>LspDocumentDiagnostics<CR>
 
-	" signature helpを無効化
-	let g:lsp_signature_help_enabled = 0
-	" ソースコード見てこっちかと思ったが効かなかった
-	" call lsp#ui#vim#signature_help#_disable()
+  " signature helpを無効化
+  let g:lsp_signature_help_enabled = 0
+  " ソースコード見てこっちかと思ったが効かなかった
+  " call lsp#ui#vim#signature_help#_disable()
 
-    let g:lsp_format_sync_timeout = 1000
+  let g:lsp_format_sync_timeout = 1000
 
 endfunction
 " let g:lsp_diagnostics_enabled = 0  " diagnostics(警告やエラーの表示？)はALEに任せるのでOFFにする
@@ -84,7 +86,7 @@ endfunction
 
 
 " vim-slp-settingsを使っている場合，こんな感じで設定する
-"	let g:lsp_settings = {
+"   let g:lsp_settings = {
 "  \  'pylsp-all': {
 "  \    'workspace_config': {
 "  \      'pylsp': {

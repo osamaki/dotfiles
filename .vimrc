@@ -35,8 +35,9 @@ let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
 " dein installation check {{{
 if &runtimepath !~# '/dein.vim'
   if !isdirectory(s:dein_repo_dir)
-  execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repo_dir
+    execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repo_dir
   endif
+
   execute 'set runtimepath^=' . s:dein_repo_dir
 endif
 " }}}
@@ -51,9 +52,11 @@ if dein#load_state(s:dein_dir)
   else
     let s:rc_dir = expand('~/.vim')
   endif
+
   if !isdirectory(s:rc_dir)
-  call mkdir(s:rc_dir, 'p')
+    call mkdir(s:rc_dir, 'p')
   endif
+
   let s:toml = s:rc_dir . '/dein.toml'
   let s:lazy_toml = s:rc_dir . '/dein_lazy.toml'
 
@@ -107,14 +110,14 @@ set background=dark
 "(see < http://sunaku.github.io/tmux-24bit-color.html#usage > for more information.)
 if (empty($TMUX))
   if (has("nvim"))
-  "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
-  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+    "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
+    let $NVIM_TUI_ENABLE_TRUE_COLOR=1
   endif
   "For Neovim > 0.1.5 and Vim > patch 7.4.1799 < https://github.com/vim/vim/commit/61be73bb0f965a895bfb064ea3e55476ac175162 >
   "Based on Vim patch 7.4.1770 (`guicolors` option) < https://github.com/vim/vim/commit/8a633e3427b47286869aa4b96f2bfc1fe65b25cd >
   " < https://github.com/neovim/neovim/wiki/Following-HEAD#20160511 >
   if (has("termguicolors"))
-  set termguicolors
+    set termguicolors
   endif
 endif
 " 現在の行を強調表示
@@ -221,12 +224,12 @@ nnoremap <silent> <leader>h :History<CR>
 let g:toggle_window_size = 0
 function! ToggleWindowSize()
   if g:toggle_window_size == 1
-  exec "normal \<C-w>="
-  let g:toggle_window_size = 0
+    exec "normal \<C-w>="
+    let g:toggle_window_size = 0
   else
-  :resize
-  :vertical resize
-  let g:toggle_window_size = 1
+    :resize
+    :vertical resize
+    let g:toggle_window_size = 1
   endif
 endfunction
 nnoremap M :call ToggleWindowSize()<CR>

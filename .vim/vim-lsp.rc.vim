@@ -70,7 +70,7 @@ function! s:configure_lsp() abort
   nnoremap <buffer> <Leader>a :<C-u>LspDocumentDiagnostics<CR>
 
   " signature helpを無効化
-  let g:lsp_signature_help_enabled = 0
+  " let g:lsp_signature_help_enabled = 0
   " ソースコード見てこっちかと思ったが効かなかった
   " call lsp#ui#vim#signature_help#_disable()
 

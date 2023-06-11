@@ -38,9 +38,10 @@ augroup MyLSP
       \       'flake8': {'enabled': v:true},
       \       'pyflakes': {'enabled': v:false},
       \       'pycodestyle': {'enabled': v:false},
-      \       'yapf': {'enabled': v:true},
+      \       'yapf': {'enabled': v:false},
       \       'autopep8': {'enabled': v:true},
       \       'jedi_definition': {'follow_imports': v:true, 'follow_builtin_imports': v:true},
+      \       'pylsp_mypy': {'enabled': v:true}
       \     }
       \   }
       \ }})

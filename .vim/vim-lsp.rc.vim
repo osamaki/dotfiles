@@ -85,12 +85,21 @@ endfunction
 
 
 " vim-slp-settingsを使っている場合，こんな感じで設定する
-"   let g:lsp_settings = {
-"  \  'pylsp-all': {
-"  \    'workspace_config': {
-"  \      'pylsp': {
-"  \        'configurationSources': ['flake8'],
-"  \      }
-"  \    }
-"  \  }
-"  \}
+" let g:lsp_settings = {
+" \  'pylsp-all': {
+" \    'workspace_config': {
+" \      'pylsp': {
+" \        'configurationSources': ['flake8'],
+" \          'plugins': {
+" \            'flake8': {'enabled': v:true},
+" \            'pyflakes': {'enabled': v:false},
+" \            'pycodestyle': {'enabled': v:false},
+" \            'mccabe': {'enabled': v:false},
+" \            'yapf': {'enabled': v:false},
+" \            'autopep8': {'enabled': v:true},
+" \            'jedi_definition': {'follow_imports': v:true, 'follow_builtin_imports': v:true}
+" \        }
+" \      }
+" \    }
+" \  }
+" \}

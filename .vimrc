@@ -124,6 +124,8 @@ endif
 set cursorline
 " ステータスラインを常に表示
 set laststatus=2
+" カーソルの前後何行を画面内に確保するか
+set scrolloff=5
 set ruler
 set showcmd
 set autoindent

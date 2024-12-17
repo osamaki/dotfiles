@@ -39,6 +39,10 @@ repo = 'previm/previm'
 on_ft = ['markdown']
 
 [[plugins]]
+repo = 'dhruvasagar/vim-table-mode'
+on_ft = ['markdown']
+
+[[plugins]]
 repo = 'mattn/vim-lsp-settings'
 on_cmd = ['LspInstallServer', 'LspUnInstallServer']
 

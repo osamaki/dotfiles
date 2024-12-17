@@ -38,5 +38,5 @@ ignore =
 	# Name of functions ends with it's first argument name
 	# 反例：filter_complicated_rules(rules)
 	FNE008
-max-line-length = 100
+max-line-length = 160
 max-cognitive-complexity = 7

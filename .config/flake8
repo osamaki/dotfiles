@@ -8,8 +8,12 @@ ignore =
 	E127,
 	# continuation line under-indented for visual indent
 	E128,
+	# whitespace before '}' （)も）
+	E202,
 	# whitespace before ‘,’, ‘;’, or ‘:’
 	E203,
+	# Unexpected spaces around keyword / parameter equals
+	E251,
 	# block comment should start with ‘# ‘
 	E265,
 	# too many leading ‘#’ for block comment
@@ -20,5 +24,19 @@ ignore =
 	W503,
 	# f-string without any placeholders
 	F541,
-	E722, E741
+	E722,
+	# do not assign a lambda expression, use a def
+	E731,
+	E741,
+	# variable in function should be lowercase
+	# 関数ローカルな定数も使いたいので無視
+	N806,
+	# "and" is not recommended in functions names
+	# 複数のことをしてるとは限らないので無視
+	# 反例：interpolate_values_between_x_and_y()
+	FNE007,
+	# Name of functions ends with it's first argument name
+	# 反例：filter_complicated_rules(rules)
+	FNE008
 max-line-length = 100
+max-cognitive-complexity = 7

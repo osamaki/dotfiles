@@ -177,3 +177,9 @@ export FZF_DEFAULT_COMMAND='find . -type f \( -not -path "*/.git/*" -not -path "
 # export FZF_DEFAULT_COMMAND="rg --files-with-matches --hidden '.' --glob '!.git'"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 # key-bindings.zsh の fzf-file-widget の bind を ctrl-E に変える
+
+
+ZSH_FILES_DIR="${HOME}/.zsh"
+for i in $ZSH_FILES_DIR/*\.zsh; do
+  . $i
+done

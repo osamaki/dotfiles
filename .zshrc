@@ -1,3 +1,6 @@
+export XDG_DATA_HOME="$HOME/.local/share"
+
+
 # 範囲指定できるように 例) mkdir {1-3} で フォルダ1,2,3を作れる
 setopt brace_ccl
 
@@ -102,6 +105,9 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' '+m:{A-Z}={a-z}' '+r:|[-_.]=
 
 # pythonのimportパス
 export PYTHONPATH="$PYTHONPATH:$HOME/Repositories"
+
+# for pipx
+export PIPX_HOME="$XDG_DATA_HOME/pipx"
 
 # for pyenv
 export PYENV_ROOT="$HOME/.pyenv"

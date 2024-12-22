@@ -116,7 +116,7 @@ eval "$(pyenv init -)"
 
 # for node.js
 export PATH="$PATH:$HOME/.nodebrew/current/bin"
-export SSL_CERT_FILE="/Users/osamaki/Downloads/cacert-2022-03-29.pem"
+# export SSL_CERT_FILE="/Users/osamaki/Downloads/cacert-2022-03-29.pem"
 
 # for vim
 # vimrcでg:python3_host_progに設定する
